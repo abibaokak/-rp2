@@ -92,7 +92,7 @@ resource-pack-prompt={"text":"Установите ресурспак FourMaces"
 |---|---|
 | `fourmaces-godmace.zip` | `a683c1e97fdd6ea08cff526b16fd4594de420a02` |
 | `pugalopack.zip` | `466badc38efda038fe6328cb62e53641992dcf06` |
-| `wellygui-style.zip` | `9fefc117339d74f96212c52a23c07aea8bc77389` |
+| `wellygui-style.zip` | `2216852c8e8b2f0cd2b61063199b8d5696ccd61e` |
 
 ## Совместимость
 
