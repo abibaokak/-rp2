@@ -1,11 +1,17 @@
-# FourMaces — God Mace Resource Pack
+# FourMaces + WellyGUI — ресурспаки
 
-Красивый ресурспак для **Божественной булавы** из плагина FourMaces.
+Красивый ресурспак для **Божественной булавы** из плагина FourMaces
+и **золотое оформление всех GUI** для плагина WellyGUI.
+
 Булава получает кастомную модель через `CustomModelData: 421001`.
 
-В плагине FourMaces 1.1.0 (config-version 3) Божественная булава по умолчанию
-получает **Density VII** и **Breach VII**, а сам плагин умеет отправлять этот пак
-игрокам (секция `resource-pack` в `config.yml`).
+В плагине FourMaces 1.1.0 (config-version 5) Божественная булава по умолчанию
+получает **Density X**, **Breach X** и **Fire Aspect V**, а сам плагин умеет
+отправлять пак игрокам (секция `resource-pack` в `config.yml`).
+
+WellyGUI 1.0.0 отправляет отдельный пак `wellygui-style.zip`: он перекрашивает
+текстуры контейнеров в золотую гамму и меняет заголовки GUI в `ru_ru`/`en_us`,
+включая инвентарь по клавише **E** (его нельзя переименовать через Bukkit/Paper).
 
 ## Файлы
 
@@ -13,6 +19,7 @@
 |---|---|---|
 | `pugalopack.zip` | Candy Halloween **+** FourMaces God Mace | `https://raw.githubusercontent.com/abibaokak/-rp2/main/pugalopack.zip` |
 | `fourmaces-godmace.zip` | Только FourMaces God Mace | `https://raw.githubusercontent.com/abibaokak/-rp2/main/fourmaces-godmace.zip` |
+| `wellygui-style.zip` | Золотые GUI для WellyGUI (контейнеры + E) | `https://raw.githubusercontent.com/abibaokak/-rp2/main/wellygui-style.zip` |
 
 `pugalopack.zip` специально лежит по старому адресу Candy-плагина:
 `https://raw.githubusercontent.com/abibaokak/-rp2/main/pugalopack.zip`.
@@ -39,7 +46,21 @@ resource-pack:
 Если ссылка на GitHub недоступна, загрузите `plugins/FourMaces/fourmaces-godmace.zip`
 на свой хостинг и укажите его адрес в `url`.
 
-### Вариант 2 — через Candy
+### Вариант 2 — WellyGUI отправляет золотое оформление GUI
+
+В `plugins/WellyGUI/config.yml`:
+
+```yaml
+resource-pack:
+  enabled: true
+  url: 'https://raw.githubusercontent.com/abibaokak/-rp2/main/wellygui-style.zip'
+  cache-bust: true
+```
+
+После `/wellygui reload` или перезахода пак приходит автоматически.
+Повторно отправить всем: `/wellygui pack`.
+
+### Вариант 3 — через Candy
 
 В `plugins/Candy/config.yml` уже должен быть адрес:
 
@@ -53,7 +74,7 @@ resource-pack:
 Если Candy раздаёт пак, в FourMaces поставьте `resource-pack.enabled: false`,
 чтобы клиенту не предлагали два пака.
 
-### Вариант 3 — стандартный resource pack
+### Вариант 4 — стандартный resource pack
 
 Пропишите в `server.properties`:
 
@@ -71,6 +92,7 @@ resource-pack-prompt={"text":"Установите ресурспак FourMaces"
 |---|---|
 | `fourmaces-godmace.zip` | `a683c1e97fdd6ea08cff526b16fd4594de420a02` |
 | `pugalopack.zip` | `466badc38efda038fe6328cb62e53641992dcf06` |
+| `wellygui-style.zip` | `9fefc117339d74f96212c52a23c07aea8bc77389` |
 
 ## Совместимость
 
@@ -88,7 +110,7 @@ resource-pack-prompt={"text":"Установите ресурспак FourMaces"
 2. Положите их в верстак 3×3 углами или крестом.
 3. В центр положите Звезду Незера.
 4. После крафта Божественная булава автоматически получит модель из этого пака,
-   Density VII и Breach VII.
+   Density X, Breach X и Fire Aspect V.
 
 Если Божественную булаву уничтожить (пустота, взрыв, поломка, очистка плагином), рецепт снова
 откроется — при включённой настройке `reset-god-craft-on-destruction: true`.
