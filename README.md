@@ -3,8 +3,9 @@
 Красивый ресурспак для **Божественной булавы** из плагина FourMaces.
 Булава получает кастомную модель через `CustomModelData: 421001`.
 
-В плагине FourMaces 1.0.0 (config-version 2) Божественная булава по умолчанию
-получает **Density VII** и **Breach VII**.
+В плагине FourMaces 1.1.0 (config-version 3) Божественная булава по умолчанию
+получает **Density VII** и **Breach VII**, а сам плагин умеет отправлять этот пак
+игрокам (секция `resource-pack` в `config.yml`).
 
 ## Файлы
 
@@ -20,7 +21,25 @@
 
 ## Установка
 
-### Вариант 1 — через Candy (рекомендуется)
+### Вариант 1 — плагин FourMaces сам отправляет пак (проще всего)
+
+В `plugins/FourMaces/config.yml`:
+
+```yaml
+resource-pack:
+  enabled: true
+  url: 'https://raw.githubusercontent.com/abibaokak/-rp2/main/fourmaces-godmace.zip'
+  cache-bust: true
+```
+
+После `/fourmaces reload` или перезахода пак приходит автоматически.
+Проверить: `/fourmaces diag` (должен показать `CustomModelData: 421001`)
+и `/fourmaces pack all`, чтобы отправить пак повторно.
+
+Если ссылка на GitHub недоступна, загрузите `plugins/FourMaces/fourmaces-godmace.zip`
+на свой хостинг и укажите его адрес в `url`.
+
+### Вариант 2 — через Candy
 
 В `plugins/Candy/config.yml` уже должен быть адрес:
 
@@ -31,14 +50,16 @@ resource-pack:
 ```
 
 Перезапустите сервер. Candy отправит объединённый пак: конфеты и Божественная булава.
+Если Candy раздаёт пак, в FourMaces поставьте `resource-pack.enabled: false`,
+чтобы клиенту не предлагали два пака.
 
-### Вариант 2 — стандартный resource pack
+### Вариант 3 — стандартный resource pack
 
 Пропишите в `server.properties`:
 
 ```properties
 resource-pack=https://raw.githubusercontent.com/abibaokak/-rp2/main/fourmaces-godmace.zip
-resource-pack-sha1=7e246910e43f8a69d88a9d210e7313d8caca3f84
+resource-pack-sha1=a683c1e97fdd6ea08cff526b16fd4594de420a02
 resource-pack-prompt={"text":"Установите ресурспак FourMaces","color":"gold"}
 ```
 
@@ -48,8 +69,8 @@ resource-pack-prompt={"text":"Установите ресурспак FourMaces"
 
 | Файл | SHA1 |
 |---|---|
-| `fourmaces-godmace.zip` | `7e246910e43f8a69d88a9d210e7313d8caca3f84` |
-| `pugalopack.zip` | `45fbf63cb39e2c58441645bdd99524293c1e0fec` |
+| `fourmaces-godmace.zip` | `a683c1e97fdd6ea08cff526b16fd4594de420a02` |
+| `pugalopack.zip` | `466badc38efda038fe6328cb62e53641992dcf06` |
 
 ## Совместимость
 
@@ -75,13 +96,19 @@ resource-pack-prompt={"text":"Установите ресурспак FourMaces"
 
 ## Если модель не появилась
 
-1. Убедитесь, что сервер отправляет именно `pugalopack.zip` (или `fourmaces-godmace.zip`).
-2. Перезайдите на сервер: Candy отправляет пак при входе.
-3. Булавы, созданные до обновления, не имеют `CustomModelData`. Выполните
+1. Выполните `/fourmaces diag` — команда покажет `CustomModelData` предмета в руке
+   и статус пака у клиента. Если CMD нет, выполните `/fourmaces refresh`.
+2. Убедитесь, что пак вообще отправляется: в консоли при входе должна быть строка
+   `Ресурспак отправлен игроку ...`. Если её нет — включите `resource-pack.enabled: true`
+   (или настройте Candy).
+3. Если у игрока `FAILED_DOWNLOAD` — ссылка недоступна с его стороны (GitHub может
+   блокироваться провайдером). Загрузите `fourmaces-godmace.zip` на свой хостинг
+   и поменяйте `resource-pack.url`.
+4. Булавы, созданные до обновления, не имеют `CustomModelData`. Выполните
    `/fm refresh` — плагин обновит предметы в инвентарях, эндер-сундуках, на земле,
    в рамках и в загруженных контейнерах. Также это происходит автоматически при входе игрока.
-4. Если клиент закешировал старую версию пака, очистите папку
-   `.minecraft/server-resource-packs` и подключитесь заново.
-5. Если установлен Oraxen или ItemsAdder и у него есть предмет `god_mace`,
+5. Чистая папка `.minecraft/server-resource-packs` означает, что клиент ещё ни разу
+   не скачивал серверный пак. После успешной загрузки в ней появится файл.
+6. Если установлен Oraxen или ItemsAdder и у него есть предмет `god_mace`,
    внешний вид берётся из него. Отключите `use-oraxen` / `use-itemsadder` в конфиге
    FourMaces, чтобы использовать модель из этого пака.
