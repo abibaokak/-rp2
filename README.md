@@ -10,7 +10,8 @@
 отправлять пак игрокам (секция `resource-pack` в `config.yml`).
 
 WellyGUI 1.0.0 отправляет отдельный пак `wellygui-style.zip`: он перекрашивает
-текстуры контейнеров в золотую гамму и меняет заголовки GUI в `ru_ru`/`en_us`,
+текстуры контейнеров в лимонно-золотую гамму с орнаментами (дамаск, крупные
+цветы-розетки на блок клеток, фирменные плашки) и меняет заголовки GUI в `ru_ru`/`en_us`,
 включая инвентарь по клавише **E** (его нельзя переименовать через Bukkit/Paper).
 
 ## Файлы
@@ -92,7 +93,7 @@ resource-pack-prompt={"text":"Установите ресурспак FourMaces"
 |---|---|
 | `fourmaces-godmace.zip` | `a683c1e97fdd6ea08cff526b16fd4594de420a02` |
 | `pugalopack.zip` | `466badc38efda038fe6328cb62e53641992dcf06` |
-| `wellygui-style.zip` | `67bed56e728f4fdfca5a55a42dab0bb35df42dce` |
+| `wellygui-style.zip` | `4edbaa9b948db6e81687ba0c5dce6f7bdb014ba1` |
 
 ## Совместимость
 
