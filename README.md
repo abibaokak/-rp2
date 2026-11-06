@@ -1,7 +1,7 @@
 # FourMaces + WellyGUI — ресурспаки
 
 Красивый ресурспак для **Божественной булавы** из плагина FourMaces
-и **золотое оформление всех GUI** для плагина WellyGUI.
+и **пергаментно-деревянное оформление всех GUI** для плагина WellyGUI.
 
 Булава получает кастомную модель через `CustomModelData: 421001`.
 
@@ -21,7 +21,7 @@ WellyGUI 1.0.0 отправляет отдельный пак `wellygui-style.zi
 |---|---|---|
 | `pugalopack.zip` | Candy Halloween **+** FourMaces God Mace | `https://raw.githubusercontent.com/abibaokak/-rp2/main/pugalopack.zip` |
 | `fourmaces-godmace.zip` | Только FourMaces God Mace | `https://raw.githubusercontent.com/abibaokak/-rp2/main/fourmaces-godmace.zip` |
-| `wellygui-style.zip` | Золотые GUI для WellyGUI (контейнеры + E) | `https://raw.githubusercontent.com/abibaokak/-rp2/main/wellygui-style.zip` |
+| `wellygui-style.zip` | Пергаментно-деревянные GUI для WellyGUI (контейнеры + E) | `https://raw.githubusercontent.com/abibaokak/-rp2/main/wellygui-style.zip` |
 
 `pugalopack.zip` специально лежит по старому адресу Candy-плагина:
 `https://raw.githubusercontent.com/abibaokak/-rp2/main/pugalopack.zip`.
